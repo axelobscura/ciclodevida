@@ -22,7 +22,7 @@ export default function Menu({categorias, menuSeleccionado}) {
         <List component="nav">
             <React.Fragment>
                 {categorias.map((value, i) => (
-                    <ListItemButton className='menutop' onClick={() => menuSeleccionado(value.tipo)}>
+                    <ListItemButton key={value.tipo} className='menutop' onClick={() => menuSeleccionado(value.tipo)}>
                         <ListItemIcon>
                             <DashboardIcon />
                         </ListItemIcon>
