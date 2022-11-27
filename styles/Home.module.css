@@ -116,6 +116,10 @@
   margin-left: 0.5rem;
 }
 
+.menutop {
+  font-size: 0.8rem !important;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
