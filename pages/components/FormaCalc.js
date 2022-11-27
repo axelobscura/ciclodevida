@@ -13,8 +13,8 @@ function preventDefault(event) {
 export default function FormaCalc() {
   return (
     <React.Fragment>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" className='mb-3' />
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField id="outlined-basic" label="Valor uno" variant="outlined" className='mb-3' />
+      <TextField id="outlined-basic" label="Valor dos" variant="outlined" className='mb-3' />
       <hr/>
     <Button variant="outlined" size="large">
       CALCULAR
