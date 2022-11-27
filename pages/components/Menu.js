@@ -18,6 +18,10 @@ function preventDefault(event) {
 
 export default function Menu({categorias, menuSeleccionado}) {
 
+    if(!categorias){
+        return 'Cargando...';
+    }
+
     return (
         <List component="nav">
             <React.Fragment>
