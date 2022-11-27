@@ -195,6 +195,7 @@ function DashboardContent() {
                     }}
                   >
                     <Title>Calcular {seleccionado ? `para ${seleccionado}` : ''}</Title>
+                    <hr/>
                     <FormaCalc />
                   </Paper>
                 </Grid>
