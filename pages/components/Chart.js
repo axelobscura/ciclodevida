@@ -20,12 +20,12 @@ const data = [
   createData('24:00', undefined),
 ];
 
-export default function Chart() {
+export default function Chart({seleccionado}) {
   const theme = useTheme();
 
   return (
     <React.Fragment>
-      <Title>Gráfica de resultados</Title>
+      <Title>Gráfica de resultados {seleccionado ? `- ${seleccionado}` : ''}</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}

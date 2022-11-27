@@ -21,6 +21,7 @@ import Chart from './components/Chart';
 import Resultados from './components/Resultados';
 import Menu from './components/Menu';
 import Title from './components/Title';
+import FormaCalc from './components/FormaCalc'
 
 function Copyright(props) {
   return (
@@ -190,11 +191,11 @@ function DashboardContent() {
                     sx={{
                       p: 2,
                       display: 'flex',
-                      flexDirection: 'column',
-                      height: 240,
+                      flexDirection: 'column'
                     }}
                   >
-                    <Title>Gráfica de resultados {seleccionado ? `para ${seleccionado}` : ''}</Title>
+                    <Title>Calcular {seleccionado ? `para ${seleccionado}` : ''}</Title>
+                    <FormaCalc />
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={4} lg={3}>
@@ -206,7 +207,7 @@ function DashboardContent() {
                       height: 240,
                     }}
                   >
-                    <Resultados />
+                    <Resultados seleccionado={seleccionado} />
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={8} lg={9}>
@@ -218,7 +219,7 @@ function DashboardContent() {
                       height: 240,
                     }}
                   >
-                    <Chart />
+                    <Chart seleccionado={seleccionado} />
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={4} lg={3}>

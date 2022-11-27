@@ -7,10 +7,11 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Resultados() {
+export default function Resultados({seleccionado}) {
   return (
     <React.Fragment>
       <Title>Costo general</Title>
+      <p><small>{seleccionado}</small></p>
       <Typography component="p" variant="h4">
         $3,024.00
       </Typography>
