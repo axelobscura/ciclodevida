@@ -16,116 +16,19 @@ function preventDefault(event) {
     event.preventDefault();
 }
 
-export default function Menu({menuSeleccionado}) {
-
-    
-
+export default function Menu({categorias, menuSeleccionado}) {
 
     return (
         <List component="nav">
             <React.Fragment>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <DashboardIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="PINTURA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <ShoppingCartIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="MORTERO" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <PeopleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="CONCRETO" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <BarChartIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="MALLA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="FIBRA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="LOSACERO" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="VARILLA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="LADRILLO" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="BLOCK" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="VIGUETA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="BOVEDILLA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="ARMADO" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="TABLAROCA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="DUROK" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="CIMBRA" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="IMPERMEABILIZANTE" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>
-                        <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="AISLANTE" />
-                </ListItemButton>
+                {categorias.map((value, i) => (
+                    <ListItemButton className='menutop' onClick={() => menuSeleccionado(value.tipo)}>
+                        <ListItemIcon>
+                            <DashboardIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={value.tipo} />
+                    </ListItemButton>
+                ))}
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
         </List>

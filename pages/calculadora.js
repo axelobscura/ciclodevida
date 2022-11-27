@@ -88,12 +88,33 @@ const mdTheme = createTheme();
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
+  const [categorias, setCategorias] = React.useState([
+    { 'tipo': 'PINTURA' },
+    { 'tipo': 'MORTERO' },
+    { 'tipo': 'CONCRETO' },
+    { 'tipo': 'MALLA' },
+    { 'tipo': 'FIBRA' },
+    { 'tipo': 'LOSACERO' },
+    { 'tipo': 'VARILLA' },
+    { 'tipo': 'LADRILLO' },
+    { 'tipo': 'BLOCK' },
+    { 'tipo': 'VIGUETA' },
+    { 'tipo': 'BOVEDILLA' },
+    { 'tipo': 'ARMADO' },
+    { 'tipo': 'TABLAROCA' },
+    { 'tipo': 'DUROK' },
+    { 'tipo': 'CIMBRA' },
+    { 'tipo': 'IMPERMEABILIZANTE' },
+    { 'tipo': 'AISLANTE' },
+  ]);
+  const [seleccionado, setSeleccionado] = React.useState();
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  const menuSeleccionado = () => {
-    console.log('menu seleccionado');
+  const menuSeleccionado = (e) => {
+    setSeleccionado(e);
   };
 
   return (
@@ -126,7 +147,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                PANEL DE CONTROL
+                PANEL DE CONTROL {seleccionado}
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -150,7 +171,7 @@ function DashboardContent() {
               </IconButton>
             </Toolbar>
             <Divider />
-            <Menu menuSeleccionado={menuSeleccionado}  />
+            <Menu categorias={categorias} menuSeleccionado={(e) => menuSeleccionado(e)} />
           </Drawer>
           <Box
             component="main"
@@ -167,7 +188,29 @@ function DashboardContent() {
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
-                {/* Chart */}
+                <Grid item xs={12} md={8} lg={9}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 240,
+                    }}
+                  >
+                  </Paper>
+                </Grid>
+                <Grid item xs={12} md={4} lg={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 240,
+                    }}
+                  >
+                    <Resultados />
+                  </Paper>
+                </Grid>
                 <Grid item xs={12} md={8} lg={9}>
                   <Paper
                     sx={{
@@ -180,18 +223,7 @@ function DashboardContent() {
                     <Chart />
                   </Paper>
                 </Grid>
-                {/* Recent Deposits */}
                 <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 240,
-                    }}
-                  >
-                    <Resultados />
-                  </Paper>
                 </Grid>
               </Grid>
               <Copyright sx={{ pt: 4 }} />
