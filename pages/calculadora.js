@@ -21,7 +21,8 @@ import Chart from './components/Chart';
 import Resultados from './components/Resultados';
 import Menu from './components/Menu';
 import Title from './components/Title';
-import FormaCalc from './components/FormaCalc'
+import FormaCalc from './components/FormaCalc';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 function Copyright(props) {
   return (
@@ -87,23 +88,74 @@ const mdTheme = createTheme();
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
   const [categorias, setCategorias] = React.useState([
-    { 'tipo': 'PINTURA' },
-    { 'tipo': 'MORTERO' },
-    { 'tipo': 'CONCRETO' },
-    { 'tipo': 'MALLA' },
-    { 'tipo': 'FIBRA' },
-    { 'tipo': 'LOSACERO' },
-    { 'tipo': 'VARILLA' },
-    { 'tipo': 'LADRILLO' },
-    { 'tipo': 'BLOCK' },
-    { 'tipo': 'VIGUETA' },
-    { 'tipo': 'BOVEDILLA' },
-    { 'tipo': 'ARMADO' },
-    { 'tipo': 'TABLAROCA' },
-    { 'tipo': 'DUROK' },
-    { 'tipo': 'CIMBRA' },
-    { 'tipo': 'IMPERMEABILIZANTE' },
-    { 'tipo': 'AISLANTE' },
+    { 
+      'tipo': 'PINTURA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'MORTERO',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'CONCRETO',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'MALLA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'FIBRA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'LOSACERO',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'VARILLA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'LADRILLO',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'BLOCK',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'VIGUETA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'BOVEDILLA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'ARMADO',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'TABLAROCA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'DUROK',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'CIMBRA',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'IMPERMEABILIZANTE',
+      'logo': <DashboardIcon />
+    },
+    { 
+      'tipo': 'AISLANTE',
+      'logo': <DashboardIcon />
+    },
   ]);
   const [seleccionado, setSeleccionado] = React.useState();
 
@@ -209,7 +261,7 @@ function DashboardContent() {
                       height: 240,
                     }}
                   >
-                    <Resultados seleccionado={seleccionado} />
+                    <Resultados seleccionado />
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={8} lg={9}>

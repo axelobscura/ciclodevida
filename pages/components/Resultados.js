@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState, useEffect} from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from './Title';
@@ -8,24 +9,32 @@ function preventDefault(event) {
 }
 
 export default function Resultados({ seleccionado }) {
-    const date = new Date();
+    const [time, setTime] = useState();
+    const [elseleccionado, setElseleccionado] = useState();
+    const [testamount, setTestamount] = useState();
 
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    let currentDate = `${day} del ${month} de ${year}`;
+    useEffect(() => {
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        setTime(`${day} del ${month} de ${year}`)
+        setElseleccionado(seleccionado);
+        setTestamount((Math.random() * 20.5).toFixed(2));
+    }, []);
+    
     return (
         <React.Fragment>
             <Title>Costo general</Title>
-            <p><small>{seleccionado}</small></p>
+            <p><small>{elseleccionado ? elseleccionado : ''}</small></p>
             <Typography component="p" variant="h4">
-                ${(Math.random() * 20.5).toFixed(2)}
+                ${testamount}
             </Typography>
             <Typography color="text.secondary" sx={{ flex: 1 }}>
-                el día {currentDate}
+                el día {time}
             </Typography>
             <div>
-                <Link color="primary" href="#" onClick={preventDefault}>
+                <Link color="primary" href="/balance">
                     Balance general
                 </Link>
             </div>

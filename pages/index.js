@@ -46,7 +46,9 @@ export default function SignInSide() {
   return (
     <Layout>
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container component="main" sx={{ 
+        height: '100vh',
+      }}>
         <CssBaseline />
         <Grid
           item
@@ -54,7 +56,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(./planta.jpg)',
+            backgroundImage: 'url(./back1.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -62,7 +64,10 @@ export default function SignInSide() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{
+          display: 'flex',
+          alignItems: 'center',
+        }}>
           <Box
             sx={{
               my: 8,
@@ -77,7 +82,10 @@ export default function SignInSide() {
             <Typography component="h1" variant="h5">
               Ingresar a su cuenta
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ 
+              mt: 1,
+              alignItems: 'center',
+            }}>
               <TextField
                 margin="normal"
                 required

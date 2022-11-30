@@ -27,14 +27,18 @@ export default function Menu({categorias, menuSeleccionado}) {
             <React.Fragment>
                 {categorias.map((value, i) => (
                     <ListItemButton key={value.tipo} className='menutop' onClick={() => menuSeleccionado(value.tipo)}>
-                        <ListItemIcon>
-                            <DashboardIcon />
+                        <ListItemIcon xs={{
+                            'min-width': '20px'
+                        }}>
+                            {value.logo}
                         </ListItemIcon>
                         <ListItemText primary={value.tipo} />
                     </ListItemButton>
                 ))}
             </React.Fragment>
+            {/* 
             <Divider sx={{ my: 1 }} />
+            */}
         </List>
     );
 }

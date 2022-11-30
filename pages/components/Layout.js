@@ -15,7 +15,7 @@ export default function Layout({ children }) {
             </Head>
 
             {children}
-
+            {/*
             <footer className={styles.footer}>
                 <a
                     href="https://imcyc.com"
@@ -25,6 +25,7 @@ export default function Layout({ children }) {
                     © 2022 Todos Los Derechos Reservados. Instituto Mexicano del Cemento y del Concreto A.C.
                 </a>
             </footer>
+            */}
         </div>
     )
 }
