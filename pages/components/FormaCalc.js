@@ -14,9 +14,9 @@ export default function FormaCalc({ seleccionado }) {
   return (
     <React.Fragment>
       <TextField type="number" id="outlined-basic" label="Valor uno" variant="outlined" className='mb-3' />
-      <TextField type="number" id="outlined-basic" label="Valor dos" variant="outlined" className='mb-3' />
-      <TextField type="number" id="outlined-basic" label="Valor tres" variant="outlined" className='mb-3' />
-      <TextField type="number" id="outlined-basic" label="Valor cuatro" variant="outlined" className='mb-3' />
+      <TextField type="number" id="outlined-basic-dos" label="Valor dos" variant="outlined" className='mb-3' />
+      <TextField type="number" id="outlined-basic-tres" label="Valor tres" variant="outlined" className='mb-3' />
+      <TextField type="number" id="outlined-basic-cuatro" label="Valor cuatro" variant="outlined" className='mb-3' />
       <hr/>
     <Button variant="outlined" size="large">
       CALCULAR{seleccionado ? ` - ${seleccionado}` : ''}
