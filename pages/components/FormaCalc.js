@@ -10,7 +10,7 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function FormaCalc() {
+export default function FormaCalc({ seleccionado }) {
   return (
     <React.Fragment>
       <TextField type="number" id="outlined-basic" label="Valor uno" variant="outlined" className='mb-3' />
@@ -19,7 +19,7 @@ export default function FormaCalc() {
       <TextField type="number" id="outlined-basic" label="Valor cuatro" variant="outlined" className='mb-3' />
       <hr/>
     <Button variant="outlined" size="large">
-      CALCULAR
+      CALCULAR{seleccionado ? ` - ${seleccionado}` : ''}
     </Button>
     </React.Fragment>
   );
