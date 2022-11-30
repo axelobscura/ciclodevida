@@ -8,7 +8,7 @@ function preventDefault(event) {
     event.preventDefault();
 }
 
-export default function Resultados({ seleccionado }) {
+export default function Resultados({ seleccionado, titulo }) {
     const [time, setTime] = useState();
     const [elseleccionado, setElseleccionado] = useState();
     const [testamount, setTestamount] = useState();
@@ -21,11 +21,11 @@ export default function Resultados({ seleccionado }) {
         setTime(`${day} del ${month} de ${year}`)
         setElseleccionado(seleccionado);
         setTestamount((Math.random() * 20.5).toFixed(2));
-    }, []);
+    }, [time]);
     
     return (
         <React.Fragment>
-            <Title>Costo general</Title>
+            <Title>{titulo}</Title>
             <p><small>{elseleccionado ? elseleccionado : ''}</small></p>
             <Typography component="p" variant="h4">
                 ${testamount}
@@ -35,7 +35,7 @@ export default function Resultados({ seleccionado }) {
             </Typography>
             <div>
                 <Link color="primary" href="/balance">
-                    Balance general
+                    {titulo}
                 </Link>
             </div>
         </React.Fragment>

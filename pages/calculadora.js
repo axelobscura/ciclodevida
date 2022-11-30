@@ -261,10 +261,28 @@ function DashboardContent() {
                       height: 240,
                     }}
                   >
-                    <Resultados seleccionado />
+                    <Resultados 
+                      seleccionado
+                      titulo="Costo General"
+                    />
+                  </Paper>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 240,
+                      marginTop: '10px'
+                    }}
+                  >
+                    <Resultados 
+                      seleccionado
+                      titulo="Costo Total"
+                    />
                   </Paper>
                 </Grid>
-                <Grid item xs={12} md={8} lg={9}>
+                
+                <Grid item xs={12} md={8} lg={9} style={{'display':'none'}}>
                   <Paper
                     sx={{
                       p: 2,
